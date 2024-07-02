@@ -19,10 +19,12 @@ A simple Discord bot that calls the Rebrickable API.
 
 2. Copy your bot token from the Discord Developer Portal.
 
-3. Create a file named .env in the root directory of the repository, and add your bot token to it:
+3. Create .txt in the root directory of the repository, and add your bot token to it:
     ```makefile
     DISCORD_TOKEN = your_bot_token_here
     ```
+
+4. Do the same for you Rebrickable API key.
 
 ## Usage
 1. Make sure you have the PATH for python set and then run the bot:
