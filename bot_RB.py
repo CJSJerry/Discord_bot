@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import requests
+import re
 
 with open('Bot_token.txt', 'r') as f:
     token = f.read()
@@ -65,6 +66,20 @@ async def rebrickable(ctx, set_number: int):
         message = f"Error retrieving data from Rebrickable API: {response.status_code}"
     
     await ctx.send(message)
+
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+
+    # Use regex to find a 4 or 5 digit number in the message
+    match = re.search(r'\b\d{4,5}\b', message.content)
+    if match:
+        set_number = int(match.group(0))
+        ctx = await bot.get_context(message)
+        await rebrickable(ctx, set_number)
+        
+    await bot.process_commands(message)
 
 # Run the bot with your token
 bot.run(token)

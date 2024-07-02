@@ -1,4 +1,4 @@
-# Discord Bot Repository
+# Discord Bot X Rebrickable API
 
 A simple Discord bot that calls the Rebrickable API.
 
