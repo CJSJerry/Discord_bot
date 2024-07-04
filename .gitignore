@@ -163,3 +163,5 @@ cython_debug/
 #.idea/
 Bot_token.txt
 RB_API_key.txt
+test_Bot_token.txt
+test_bot_RB.py
