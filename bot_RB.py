@@ -74,7 +74,8 @@ async def on_message(message):
 
     # Use regex to find a 4 or 5 digit number in the message
     match = re.search(r'\b\d{4,5}\b', message.content)
-    if match:
+    if match and match.group() not in ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', 
+                               '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030']:
         set_number = int(match.group(0))
         ctx = await bot.get_context(message)
         await rebrickable(ctx, set_number)
